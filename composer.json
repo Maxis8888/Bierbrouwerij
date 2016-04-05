@@ -1,5 +1,11 @@
 {
     "require": {
-        "gears/router": "^0.6.6"
+        "gears/router": "^0.6.6",
+        "classpreloader/classpreloader": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bierbrouwerij\\": "app/"
+        }
     }
 }

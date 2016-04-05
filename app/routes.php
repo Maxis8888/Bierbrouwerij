@@ -1,5 +1,7 @@
 <?php
 
-Route::get('/', function() {
-    echo "Olla";
+Route::get('/', 'Bierbrouwerij\Controllers\HelloController@index');
+
+Route::get('/hello', function() {
+    "Hello";
 });
