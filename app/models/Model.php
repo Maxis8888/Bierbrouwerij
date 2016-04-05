@@ -11,5 +11,12 @@ namespace Bierbrouwerij\Models;
 
 abstract class Model
 {
+    protected $table;
+
+    public function create(array $data)
+    {
+        return "Yes";
+    }
+
 
 }

@@ -4,6 +4,8 @@ namespace Bierbrouwerij\Controllers;
 
 use Illuminate\Routing\Controller;
 
+use Bierbrouwerij\Models\User;
+
 
 /**
  * Class HelloController
@@ -18,7 +20,8 @@ class HelloController extends Controller
      */
     public function hello()
     {
-        echo "hello";
+        $user = new User;
+        echo $user->create();
     }
 
     /**

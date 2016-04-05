@@ -2,6 +2,4 @@
 
 Route::get('/', 'Bierbrouwerij\Controllers\HelloController@index');
 
-Route::get('/hello', function() {
-    "Hello";
-});
+Route::get('/hello', 'Bierbrouwerij\Controllers\HelloController@hello');
