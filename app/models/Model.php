@@ -1,22 +1,31 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: paul
- * Date: 05-04-16
- * Time: 11:20
- */
 
 namespace Bierbrouwerij\Models;
 
 
 abstract class Model
 {
+    /**
+     * The table name.
+     *
+     * @var String
+     */
     protected $table;
 
-    public function create(array $data)
+    /**
+     * Set the columns.
+     *
+     * @param $column
+     * @param $value
+     */
+    public function __set($column, $value)
     {
-        return "Yes";
+        $this->$column = $value;
     }
 
 
+    public function save()
+    {
+        
+    }
 }
