@@ -3,7 +3,6 @@
 namespace Bierbrouwerij\Controllers;
 
 use Illuminate\Routing\Controller;
-
 use Bierbrouwerij\Models\User;
 
 
@@ -20,8 +19,16 @@ class HelloController extends Controller
      */
     public function hello()
     {
-        $user = User::find(1);
+        $array = [
+            'col1',
+            'col2',
+            'col3'
+        ];
 
+        unset($array[0]);
+        $array = array_values($array);
+
+        print_r($array);
     }
 
     /**
