@@ -21,15 +21,14 @@ class ConnectionManager
         $this->engine = 'mysql';
     }
 
-    public function connection($host, $user, $password, $database)
+    public function connect($host, $user, $password, $database)
     {
-        try
-        {
-            $host = new PDO($database, $user, $password);
-        }
-        catch(PDOException $e)
-        {
+        try {
+            $conn = new PDO($database, $user, $password);
+        } catch(PDOException $e) {
             echo 'There was an error: '.$e->getMessage();
         }
+
+        return $conn;
     }
 }
