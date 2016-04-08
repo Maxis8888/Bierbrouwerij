@@ -2,8 +2,9 @@
 
 namespace Bierbrouwerij\Models;
 
+use Exception;
 
-abstract class Model
+class Model extends CRUD
 {
     private $table;
 
@@ -26,12 +27,26 @@ abstract class Model
     }
 
     /**
+     * Set the table name.
+     *
+     * @param $table
+     * @throws Exception
+     */
+    protected function setTable($table)
+    {
+        if (is_integer($table) || is_string($table))
+            $this->table = $table;
+        else
+            throw new Exception("The table name must be an integer or string!");
+    }
+
+    /**
      * Set the primary key.
      *
      * @param $primaryKey
      * @throws Exception
      */
-    abstract protected function setPrimaryKey($primaryKey)
+    protected function setPrimaryKey($primaryKey)
     {
         if (is_integer($primaryKey) || is_string($primaryKey))
             $this->primaryKey = $primaryKey;
@@ -50,16 +65,18 @@ abstract class Model
         if (is_integer($id) || is_string($id))
             $this->id = $id;
         else
-            throw new Exception("ID must be an integer or string!");
+            throw new Exception("Identifier must be an integer or string!");
     }
 
-    protected function find($id)
+    protected static function find($id)
     {
         $this->setId($id);
-    }
 
-    protected function save()
-    {
+        $model = new self();
+        $model->select($this->primaryKey);
+        $model->from($this->table);
+        $model->where($this->columns);
 
+        return $model->get();
     }
 }
