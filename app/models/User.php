@@ -13,7 +13,10 @@ use Bierbrouwerij\Models\Model;
 
 class User extends Model
 {
-    protected $table = 'users';
+    public function __construct()
+    {
+        $this->setPrimaryKey()
+    }
 
     protected $primaryKey = 'id';
 }
