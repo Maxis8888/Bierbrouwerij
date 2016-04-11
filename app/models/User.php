@@ -2,7 +2,7 @@
 
 namespace Bierbrouwerij\Models;
 
-use Bierbrouwerij\Models\Model;
+use Bierbrouwerij\models\Model;
 
 
 class User extends Model
@@ -12,4 +12,6 @@ class User extends Model
         $this->setTable('users');
         $this->setPrimaryKey('id');
     }
+
+    protected $table = 'users';
 }

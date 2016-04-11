@@ -29,6 +29,11 @@ class HelloController extends Controller
         $array = array_values($array);
 
         print_r($array);
+
+
+        $user = User::find(69);
+        echo $user->username;
+        echo $user->create();
     }
 
     /**

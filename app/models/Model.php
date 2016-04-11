@@ -70,13 +70,12 @@ class Model extends CRUD
 
     protected static function find($id)
     {
-        $model = new self();
-        $model->setId($id);
+        $this->setId($id);
 
-        $model->setSelect(['id', 'name']);
-        $model->setFrom($this->table);
-        $model->setWhere($this->columns);
-        $model->setAndWhere($this->columns, '=', $this->alsjdfl);
+        $model = new self();
+        $model->select($this->primaryKey);
+        $model->from($this->table);
+        $model->where($this->columns);
 
         return $model->get();
     }
