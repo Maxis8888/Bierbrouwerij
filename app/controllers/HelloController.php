@@ -3,11 +3,8 @@
 namespace Bierbrouwerij\Controllers;
 
 use Illuminate\Routing\Controller;
-<<<<<<< HEAD
 use Bierbrouwerij\Views\View;
-=======
 
->>>>>>> develop
 use Bierbrouwerij\Models\User;
 
 
@@ -24,9 +21,6 @@ class HelloController extends Controller
      */
     public function hello()
     {
-<<<<<<< HEAD
-
-=======
         $array = [
             'col1',
             'col2',
@@ -41,7 +35,7 @@ class HelloController extends Controller
         print_r($array);
 
         echo $user->create();
->>>>>>> develop
+
     }
 
     /**
