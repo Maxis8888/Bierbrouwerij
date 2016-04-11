@@ -1,6 +1,6 @@
 <?php
 
-namespace Bierbrouwerij\Views;
+namespace Bierbrouwerij\Libraries\View;
 
 
 class View
@@ -11,7 +11,7 @@ class View
 
     public function __construct($file, array $variables = null)
     {
-        $this->path = dirname(__DIR__) . '/Views/' . $file;
+        $this->path = dirname(__DIR__) . '../../Views/' . $file;
         $this->variables = $variables;
     }
 
