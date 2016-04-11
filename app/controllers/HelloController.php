@@ -20,8 +20,11 @@ class HelloController extends Controller
      */
     public function hello()
     {
-        $user = User::find(1);
+        $user = User::find(69);
+        echo $user->username;
 
+
+        echo $user->create();
     }
 
     /**
