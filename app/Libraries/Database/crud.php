@@ -15,8 +15,18 @@ class CRUD
     private $table;
     private $where;
 
+    /**
+     * Database object.
+     *
+     * @var PDO
+     */
+    private $db;
+
     public function __construct()
     {
+        $connectionManager = new ConnectionManager();
+        $this->db = $connectionManager->connect();
+
         $this->select = '';
         $this->table = '';
         $this->where = '';
