@@ -17,7 +17,8 @@ class HomeController extends Controller
 
         View::make('app', [
             'hello' => 'Hallo!',
-            'user' => $user->test()
+            'user' => $user->test(),
+            'title' => 'De Veteraan'
         ]);
     }
 }

@@ -26,6 +26,7 @@ class ConnectionManager
      * @param $database
      * @param string $engine
      */
+
     public function __construct($host, $user, $password, $database, $engine = 'PDO')
     {
         $this->host = $host;
