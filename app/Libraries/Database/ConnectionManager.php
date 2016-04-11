@@ -2,7 +2,6 @@
 
 namespace Bierbrouwerij\Libraries\Database;
 
-
 class ConnectionManager
 {
     private $host;
@@ -15,7 +14,7 @@ class ConnectionManager
 
     private $engine;
 
-    private $dns;
+    private $dsn;
 
     /**
      * ConnectionManager constructor.
@@ -26,7 +25,6 @@ class ConnectionManager
      * @param $database
      * @param string $engine
      */
-
     public function __construct($host, $user, $password, $database, $engine = 'PDO')
     {
         $this->host = $host;
@@ -34,11 +32,22 @@ class ConnectionManager
         $this->password = $password;
         $this->database = $database;
         $this->engine = $engine;
-        $this->dns = $this->engine.'dbname='.$this->database.';host='.$this->host;
+        $this->dsn = $this->engine.':dbname='.$this->database.';host='.$this->host;
     }
 
+    /**
+     * Create a new connection.
+     *
+     * @return PDO
+     */
     public function connect()
     {
-        return new PDO($this->dns, $this->user, $this->password, $this->user, $this->password);
+        try {
+            $dbh = new PDO($this->dsn, $this->user, $this->pass);
+        } catch (\PDOException $e) {
+            echo "Connection with the database failed " . $e->getMessage();
+        }
+
+        return $dbh;
     }
 }

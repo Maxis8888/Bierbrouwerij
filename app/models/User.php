@@ -9,8 +9,10 @@ class User extends Model
 {
     protected $table = 'users';
 
+    protected $primaryKey = 'id';
+
     public function test()
     {
-        return "Hello luls";
+        return "Hello";
     }
 }
