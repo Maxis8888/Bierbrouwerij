@@ -3,6 +3,7 @@
 namespace Bierbrouwerij\Controllers;
 
 use Illuminate\Routing\Controller;
+use Bierbrouwerij\Views\View;
 use Bierbrouwerij\Models\User;
 
 
@@ -36,6 +37,10 @@ class HelloController extends Controller
      */
     public function index()
     {
-        echo "Dag";
+        $data = [
+            'hallo' => 'hallo'
+        ];
+
+        View::make('app', $data);
     }
 }
