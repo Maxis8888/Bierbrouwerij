@@ -1,7 +1,8 @@
 <?php
 
-namespace Bierbrouwerij\Models;
+namespace Bierbrouwerij\Libraries\Model;
 
+use Bierbrouwerij\Libraries\Database\CRUD;
 use Exception;
 
 class Model extends CRUD

@@ -9,7 +9,7 @@
 namespace Bierbrouwerij\Libraries\Database;
 
 
-class crud
+class CRUD
 {
     private $select;
     private $table;
