@@ -12,6 +12,7 @@
         <div class="">Title</div>
         <div class="">
             <p>Lorum Ipsum</p>
+            <p><?= $config ?></p>
         </div>
     </div>
 </div>

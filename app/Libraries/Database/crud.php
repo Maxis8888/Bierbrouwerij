@@ -24,8 +24,8 @@ class CRUD
 
     public function __construct()
     {
-        $connectionManager = new ConnectionManager();
-        $this->db = $connectionManager->connect();
+        /*$connectionManager = new ConnectionManager();
+        $this->db = $connectionManager->connect();*/
 
         $this->select = '';
         $this->table = '';
