@@ -1,5 +1,11 @@
 <?php
 
 return [
-    'home_dir' => dirname(__DIR__),
+    'db' => [
+        'host' => 'localhost',
+        'name' => 'bierbrouwerij',
+        'user' => 'root',
+        'pass' => 'root',
+        'engine' => 'mysql',
+    ],
 ];
