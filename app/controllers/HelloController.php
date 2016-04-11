@@ -20,16 +20,7 @@ class HelloController extends Controller
      */
     public function hello()
     {
-        $array = [
-            'col1',
-            'col2',
-            'col3'
-        ];
 
-        unset($array[0]);
-        $array = array_values($array);
-
-        print_r($array);
     }
 
     /**
@@ -41,6 +32,7 @@ class HelloController extends Controller
             'hallo' => 'hallo'
         ];
 
+        View::make('header', $data);
         View::make('app', $data);
     }
 }
