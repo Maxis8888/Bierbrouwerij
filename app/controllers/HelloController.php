@@ -3,6 +3,7 @@
 namespace Bierbrouwerij\Controllers;
 
 use Illuminate\Routing\Controller;
+
 use Bierbrouwerij\Models\User;
 
 
@@ -24,11 +25,15 @@ class HelloController extends Controller
             'col2',
             'col3'
         ];
+        $user = User::find(69);
+        echo $user->username;
 
         unset($array[0]);
         $array = array_values($array);
 
         print_r($array);
+
+        echo $user->create();
     }
 
     /**
