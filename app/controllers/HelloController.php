@@ -20,9 +20,18 @@ class HelloController extends Controller
      */
     public function hello()
     {
+        $array = [
+            'col1',
+            'col2',
+            'col3'
+        ];
         $user = User::find(69);
         echo $user->username;
 
+        unset($array[0]);
+        $array = array_values($array);
+
+        print_r($array);
 
         echo $user->create();
     }
