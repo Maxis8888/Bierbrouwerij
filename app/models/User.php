@@ -2,14 +2,15 @@
 
 namespace Bierbrouwerij\Models;
 
-use Bierbrouwerij\Models\Model;
+use Bierbrouwerij\Libraries\Model\Model;
 
 
 class User extends Model
 {
-    public function __construct()
+    protected $table = 'users';
+
+    public function test()
     {
-        $this->setTable('users');
-        $this->setPrimaryKey('id');
+        return "Hello luls";
     }
 }
