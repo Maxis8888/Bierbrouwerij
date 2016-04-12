@@ -2,8 +2,8 @@
 
 namespace Bierbrouwerij\Models;
 
-use Bierbrouwerij\Libraries\Model\Model;
 
+use Bierbrouwerij\Libraries\Model\Model;
 
 class User extends Model
 {
