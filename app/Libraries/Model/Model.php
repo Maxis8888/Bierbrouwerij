@@ -2,6 +2,7 @@
 
 namespace Bierbrouwerij\Libraries\Model;
 
+use Bierbrouwerij\Libraries\Config\Config;
 use Bierbrouwerij\Libraries\Database\ConnectionManager;
 
 class Model
@@ -14,10 +15,10 @@ class Model
     public function __construct()
     {
         $connectionManager = new ConnectionManager(
-            'vps.itbergmann.com',
-            'admin_brouwerij',
-            'Bierbrouwerij',
-            'admin_brouwerij'
+            Config::get('database', 'host'),
+            Config::get('database', 'user'),
+            Config::get('database', 'pass'),
+            Config::get('database', 'name')
         );
         $this->dbh = $connectionManager->connect();
     }
