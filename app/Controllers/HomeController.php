@@ -2,6 +2,7 @@
 
 namespace Bierbrouwerij\Controllers;
 
+
 use Bierbrouwerij\Libraries\View\View;
 use Illuminate\Routing\Controller;
 use Bierbrouwerij\Models\User;
