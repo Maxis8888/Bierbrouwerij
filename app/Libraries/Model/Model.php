@@ -2,17 +2,37 @@
 
 namespace Bierbrouwerij\Libraries\Model;
 
-use Bierbrouwerij\Libraries\Database\CRUD;
+use Bierbrouwerij\Libraries\Database\QueryBuilder;
 use Exception;
 
-class Model extends CRUD
+class Model extends QueryBuilder
 {
-    private $table;
+    /**
+     * The table name.
+     *
+     * @var String|Integer
+     */
+    protected $table;
 
-    private $primaryKey;
+    /**
+     * The primary key.
+     *
+     * @var String|Integer
+     */
+    protected $primaryKey;
 
+    /**
+     * Identifier.
+     *
+     * @var String|Integer
+     */
     private $id;
 
+    /**
+     * The columns.
+     *
+     * @var array
+     */
     private $columns = [];
 
     /**
@@ -23,56 +43,20 @@ class Model extends CRUD
      */
     public function __set($column, $value)
     {
-        $this->$column = $value;
+        //$this->$column = $value; Probably not needed
         $this->columns[$column] = $value;
     }
 
     /**
-     * Set the table name.
-     *
-     * @param $table
-     * @throws Exception
-     */
-    protected function setTable($table)
-    {
-        if (is_integer($table) || is_string($table))
-            $this->table = $table;
-        else
-            throw new Exception("The table name must be an integer or string!");
-    }
-
-    /**
-     * Set the primary key.
-     *
-     * @param $primaryKey
-     * @throws Exception
-     */
-    protected function setPrimaryKey($primaryKey)
-    {
-        if (is_integer($primaryKey) || is_string($primaryKey))
-            $this->primaryKey = $primaryKey;
-        else
-            throw new Exception("Primary key must be an integer of string!");
-    }
-
-    /**
-     * Set the identifier.
+     * Retrieve a model by it's identifier.
      *
      * @param $id
-     * @throws Exception
+     * @return mixed
      */
-    private function setId($id)
-    {
-        if (is_integer($id) || is_string($id))
-            $this->id = $id;
-        else
-            throw new Exception("Identifier must be an integer or string!");
-    }
-
     protected static function find($id)
     {
         $model = new self();
-        $model->setId($id);
+        $model->id = $id;
 
         $model->setSelect(['id', 'name']);
         $model->setFrom($this->table);
