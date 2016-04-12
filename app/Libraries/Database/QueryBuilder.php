@@ -48,6 +48,8 @@ class QueryBuilder
      */
     private $innerJoin;
 
+    private $query;
+
     /**
      * Database object.
      *
@@ -123,6 +125,22 @@ class QueryBuilder
     }
 
     public function setOrWhere(array $columns)
+    {
+        $this->orWhere = " OR WHERE ";
+        $this->orWhere =+ $columns[0];
+        $this->orWhere =+ " {$columns[1]} ";
+        $this->orWhere =+ $columns[2];
+    }
+
+    /**
+     * @param $query
+     */
+    public function raw($query)
+    {
+        $this->query = $query;
+    }
+
+    public function execute()
     {
 
     }

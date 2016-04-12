@@ -4,15 +4,15 @@ namespace Bierbrouwerij\Models;
 
 use Bierbrouwerij\Libraries\Model\Model;
 
-
 class User extends Model
 {
-    protected $table = 'users';
-
-    protected $primaryKey = 'id';
-
-    public function test()
+    public function getUserById($id)
     {
-        return "Hello";
+        $stmt = $this->dbh->prepare("SELECT * FROM users WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+
+        $row = $stmt->fetch();
+
+        return $row['name'];
     }
 }
