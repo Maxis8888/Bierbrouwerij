@@ -4,6 +4,7 @@ namespace Bierbrouwerij\Models;
 
 use Bierbrouwerij\Libraries\Model\Model;
 
+
 class User extends Model
 {
     public function getUserById($id)

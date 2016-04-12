@@ -6,20 +6,35 @@ body {
     background-color: gainsboro;
 }
 
+.margin-left-10px p {
+    margin: 0;
+}
+
+.margin-bottom-10px {
+    margin-bottom: 10px;
+}
+
+.transition-ease-in-3s {
+    transition: ease-in .2s;
+}
+
 .header-container {
     width: 100%;
     height: 50px;
     background-color: #424242;
-    font-family: 'Oswald', sans-serif;
 }
 
 .center {
-    margin: auto;
-    width: 5%;
+    /*margin: auto;
+    width: 5%;*/
 }
 
 .white-color {
     color: white;
+}
+
+.color-material-green {
+    color: #00897B;
 }
 
 .material-back {
@@ -27,10 +42,103 @@ body {
     padding: 20px;
 /*    margin: 0.5rem 0 1rem 0;*/
     margin-top: 10px;
-    width: 900px;
+    width: 60%;
     border-radius: 2px;
     background-color: #fff;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+input[type="text"] {
+    border: 0;
+    border-bottom: 2px solid #00897B;
+    height: 21px;
+    padding: 5px 30px 5px 5px;
+    outline: none;
+}
+
+.border-0 {
+
+}
+
+.search-icon {
+    margin-top: 5px;
+    float: left;
+    margin-left: -30px;
+}
+
+.search {
+    margin-left: 10px;
+    width: 245px;
+}
+
+.width-310px {
+    width: 310px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.height-86-percent {
+    height: 86%;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.margin-left-10px {
+    margin-left: 10px;
+}
+
+.margin-top-0 {
+    margin-top: 0;
+}
+
+.width-max {
+    width: 100%;
+}
+
+.height-50px {
+    height: 50px;
+}
+
+.sidebar-item:hover {
+    background-color: #E0E0E0;
+}
+
+.sidebar {
+    width: 19%;
+}
+
+.system-container {
+    margin-left: 20.5%;
+}
+
+.padding-left-right-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.error-message {
+    background-color: #FB8C00;
+    width: 100%;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.error-message p {
+    margin-left: 10px;
 }
 
 .title {
