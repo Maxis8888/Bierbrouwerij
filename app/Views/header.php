@@ -8,6 +8,6 @@
 <link rel="stylesheet" type="text/css" href="public/css/style.css">
 <title><?= $title ?></title>
 
-<div class="header-container white-color">
+<div class="header-container white-color relative">
     <div class="title center">De Veteraan</div>
 </div>
