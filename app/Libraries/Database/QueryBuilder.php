@@ -57,7 +57,7 @@ class QueryBuilder
 
     public function __construct()
     {
-        $config = Config::get('db');
+        $config = Config::get('database', 'db');
 
         $connectionManager = new ConnectionManager(
             $config['host'],

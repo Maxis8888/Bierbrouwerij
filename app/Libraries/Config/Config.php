@@ -11,9 +11,9 @@ class Config
      * @param $item
      * @return mixed
      */
-    public static function get($item)
+    public static function get($file, $item)
     {
-        $config = include_once ROOT_DIR . '/app/Config/app.php';
+        $config = include_once ROOT_DIR . '/app/Config/' . $file . '.php';
 
         return $config[$item];
     }

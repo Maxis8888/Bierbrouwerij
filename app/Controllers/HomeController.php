@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = new User;
-        $config = Config::get('db')['host'];
+        $config = Config::get('database', 'db')['host'];
 
         View::make('app', [
             'hello' => 'Hallo!',
