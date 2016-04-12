@@ -2,7 +2,6 @@
 
 namespace Bierbrouwerij\Libraries\Model;
 
-use Bierbrouwerij\Libraries\Config\Config;
 use Bierbrouwerij\Libraries\Database\ConnectionManager;
 
 class Model
@@ -20,7 +19,6 @@ class Model
             'Bierbrouwerij',
             'admin_brouwerij'
         );
-
         $this->dbh = $connectionManager->connect();
     }
 }

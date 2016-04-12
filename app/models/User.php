@@ -8,7 +8,7 @@ class User extends Model
 {
     public function getUserById($id)
     {
-        $stmt = $this->dbh->prepare("SELECT * FROM users WHERE id = :id");
+        $stmt = $this->dbh->prepare("SELECT * FROM User WHERE id = :id");
         $stmt->execute([':id' => $id]);
 
         $row = $stmt->fetch();
