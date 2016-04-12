@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'random' => 'string',
+    'mode' => 'development' // production - development
 ];

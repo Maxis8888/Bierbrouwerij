@@ -6,15 +6,16 @@ namespace Bierbrouwerij\Libraries\Config;
 class Config
 {
     /**
-     * Get configuration item.
+     * Get an item from a configuration file.
      *
-     * @param $item
+     * @param $file
+     * @param null $item
      * @return mixed
      */
-    public static function get($file, $item)
+    public static function get($file, $item = null)
     {
-        $config = include_once ROOT_DIR . '/app/Config/' . $file . '.php';
+        $file = include(ROOT_DIR . '/app/Config/' . $file . '.php');
 
-        return $config[$item];
+        return ($item) ? $file[$item] : $file;
     }
 }
