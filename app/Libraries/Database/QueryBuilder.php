@@ -32,21 +32,21 @@ class QueryBuilder
      *
      * @var array
      */
-    private $andWhere = [];
+    private $andWhere;
 
     /**
      * OR WHERE clauses.
      *
      * @var array
      */
-    private $orWhere = [];
+    private $orWhere;
 
     /**
      * INNER JOIN clauses.
      *
      * @var array
      */
-    private $innerJoin = [];
+    private $innerJoin;
 
     /**
      * Database object.
@@ -55,6 +55,9 @@ class QueryBuilder
      */
     private $db;
 
+    /**
+     * QueryBuilder constructor.
+     */
     public function __construct()
     {
         $config = Config::get('database', 'db');
@@ -69,22 +72,57 @@ class QueryBuilder
         $this->db = $connectionManager->connect();
     }
 
-    public function create($select, $table, $where)
+    /**
+     * Columns to array.
+     *
+     * @param $columns
+     * @return string
+     */
+    private static function toArray($columns)
     {
-        "SELECT {$select} FROM {$table} WHERE {$where}";
+        return implode(', ', $columns);
     }
 
-    public function read()
+    /**
+     * Create the SELECT statement.
+     *
+     * @param array $columns
+     */
+    public function setSelect(array $columns)
     {
+        $columns = QueryBuilder::toArray($columns);
 
+        $this->select = "SELECT ";
+        $this->select =+ $columns;
     }
 
-    public function update()
+    /**
+     * Create the FROM statement.
+     *
+     * @param $table
+     */
+    public function setFrom($table)
     {
-
+        $this->table = " FROM ";
+        $this->table =+ $table;
     }
 
-    public function delete()
+    /**
+     * Set the WHERE statement.
+     *
+     * @param array $columns
+     */
+    public function setWhere(array $columns)
+    {
+        // ['col1', '=', 'col2']
+
+        $this->where = " WHERE ";
+        $this->where =+ $columns[0];
+        $this->where =+ " {$columns[1]} ";
+        $this->where =+ $columns[2];
+    }
+
+    public function setOrWhere(array $columns)
     {
 
     }

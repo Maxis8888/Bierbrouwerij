@@ -3,6 +3,7 @@
 namespace Bierbrouwerij\Controllers;
 
 use Bierbrouwerij\Libraries\Config\Config;
+use Bierbrouwerij\Libraries\Database\QueryBuilder;
 use Bierbrouwerij\Libraries\View\View;
 use Illuminate\Routing\Controller;
 use Bierbrouwerij\Models\User;
