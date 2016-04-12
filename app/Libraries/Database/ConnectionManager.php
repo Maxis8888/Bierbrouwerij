@@ -27,14 +27,14 @@ class ConnectionManager
      * @param $database
      * @param string $engine
      */
-    public function __construct($host, $user, $pass, $name, $engine = 'PDO')
+    public function __construct($host, $user, $pass, $name, $engine = 'mysql')
     {
         $this->host = $host;
         $this->user = $user;
         $this->pass = $pass;
         $this->name = $name;
         $this->engine = $engine;
-        $this->dsn = $this->engine.':dbname='.$this->name.';host='.$this->host;
+        $this->dsn = $this->engine.':host='.$this->host.';dbname='.$this->name;
     }
 
     /**
@@ -47,7 +47,7 @@ class ConnectionManager
         try {
             $dbh = new PDO($this->dsn, $this->user, $this->pass);
         } catch (\PDOException $e) {
-            echo "Connection with the database failed " . $e->getMessage();
+            echo "<div class='error-message'><p>Connection with the database failed " . $e->getMessage().'</p></div>';
         }
 
         return $dbh;

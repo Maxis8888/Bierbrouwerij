@@ -128,6 +128,19 @@ input[type="text"] {
     padding-right: 0;
 }
 
+.error-message {
+    background-color: #FB8C00;
+    width: 100%;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.error-message p {
+    margin-left: 10px;
+}
+
 .title {
     line-height: 50px;
     vertical-align: middle;
