@@ -19,7 +19,6 @@ class HomeController extends Controller
             'hello' => 'Hallo!',
             'user' => $user->getUserById(1),
             'title' => 'De Veteraan',
-            'config' => 'hello'
         ]);
     }
 }
