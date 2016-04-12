@@ -13,6 +13,6 @@ class User extends Model
 
     public function test()
     {
-        return "Hello";
+        return "Paul Bergmann";
     }
 }
