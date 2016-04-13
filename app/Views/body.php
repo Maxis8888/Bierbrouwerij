@@ -15,7 +15,7 @@
 
         <div class="group search margin-bottom-10px" style="margin-top: 20px;">
             <form class="inline-block">
-                <input type="text" required placeholder="Zoeken">
+                <input type="text" required placeholder="Zoeken...">
                 <span class="highlight"></span>
                 <span class="bar"></span>
             </form>
