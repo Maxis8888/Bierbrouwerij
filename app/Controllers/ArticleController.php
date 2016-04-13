@@ -13,13 +13,13 @@ class ArticleController extends Controller
      */
     public function create()
     {
-
+        View::make('asfasdfs');
     }
 
     /**
      * Store the article data.
      */
-    public function store()
+    public function store(Request $request)
     {
 
     }
