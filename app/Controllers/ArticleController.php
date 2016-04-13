@@ -19,7 +19,7 @@ class ArticleController extends Controller
     /**
      * Store the article data.
      */
-    public function store(Request $request)
+    public function store()
     {
 
     }
