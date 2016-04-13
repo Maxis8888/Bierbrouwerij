@@ -14,10 +14,12 @@
         </div>
 
         <div class="group search margin-bottom-10px" style="margin-top: 20px;">
-            <input type="text" required placeholder="Zoeken">
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <i class="material-icons">search</i>
+            <form class="inline-block">
+                <input type="text" required placeholder="Zoeken">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+            </form>
+            <!--<i class="material-icons">search</i>-->
         </div>
 
         <div class="width-max height-50px sidebar-item title transition-ease-in-3s pointer">
