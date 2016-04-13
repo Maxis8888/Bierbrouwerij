@@ -179,7 +179,6 @@ input {
     font-size:18px;
     padding:10px 20px 10px 5px;
     display:block;
-    width:300px;
     border:none;
     border-bottom:1px solid #757575;
 }
@@ -211,7 +210,7 @@ input:focus ~ label, input:valid ~ label {
 .bar 	{
     position:relative;
     display:block;
-    width:325px;
+    width: 257px;
 }
 
 .bar:before, .bar:after {
