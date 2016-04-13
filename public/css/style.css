@@ -6,20 +6,65 @@ body {
     background-color: gainsboro;
 }
 
+.margin-left-10px p {
+    margin: 0;
+}
+
+.margin-bottom-10px {
+    margin-bottom: 10px;
+}
+
+.transition-ease-in-3s {
+    transition: ease-in .2s;
+}
+
 .header-container {
     width: 100%;
     height: 50px;
     background-color: #424242;
-    font-family: 'Oswald', sans-serif;
 }
 
 .center {
-    margin: auto;
-    width: 5%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+}
+
+.statement {
+    border-left: 5px solid;
+    padding-left: 20px;
+    border-left-color: #FB8C00;
+}
+
+.statement h1 {
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #757575;
+}
+
+.statement ul {
+    margin: 0;
+    padding: 0;
+    color: #FB8C00;
+    list-style: none;
+}
+
+.statement ul li {
+    font-size: 20px;
+    line-height: 40px;
 }
 
 .white-color {
     color: white;
+}
+
+.color-material-green {
+    color: #00897B;
 }
 
 .material-back {
@@ -27,13 +72,199 @@ body {
     padding: 20px;
 /*    margin: 0.5rem 0 1rem 0;*/
     margin-top: 10px;
-    width: 900px;
+    width: 60%;
     border-radius: 2px;
     background-color: #fff;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
+.search-icon {
+    margin-top: 5px;
+    float: left;
+    margin-left: -30px;
+}
+
+.search {
+    margin-left: 10px;
+    width: 320px;
+}
+
+.width-310px {
+    width: 310px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.height-86-percent {
+    height: 86%;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.margin-left-10px {
+    margin-left: 10px;
+}
+
+.margin-top-0 {
+    margin-top: 0;
+}
+
+.width-max {
+    width: 100%;
+}
+
+.height-50px {
+    height: 50px;
+}
+
+.sidebar-item:hover {
+    background-color: #E0E0E0;
+}
+
+.sidebar {
+    width: 19%;
+}
+
+.system-container {
+    margin-left: 20.5%;
+}
+
+.padding-left-right-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.error-message {
+    background-color: #FB8C00;
+    width: 100%;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.error-message p {
+    margin-left: 10px;
+}
+
 .title {
     line-height: 50px;
     vertical-align: middle;
+}
+
+.group {
+    position:relative;
+}
+
+.group > i {
+    position: absolute;
+    bottom: 10px;
+    right: -10px;
+    color: #999;
+}
+
+input {
+    font-size:18px;
+    padding:10px 20px 10px 5px;
+    display:block;
+    width:300px;
+    border:none;
+    border-bottom:1px solid #757575;
+}
+input:focus {
+    outline:none;
+}
+
+/* LABEL ======================================= */
+label {
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label {
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{
+    position:relative;
+    display:block;
+    width:325px;
+}
+
+.bar:before, .bar:after {
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#5264AE;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left:50%;
+}
+.bar:after {
+    right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
 }

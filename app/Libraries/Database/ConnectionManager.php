@@ -47,7 +47,7 @@ class ConnectionManager
         try {
             $dbh = new PDO($this->dsn, $this->user, $this->pass);
         } catch (\PDOException $e) {
-            echo "Connection with the database failed " . $e->getMessage();
+            echo "<div class='error-message'><p>Connection with the database failed " . $e->getMessage().'</p></div>';
         }
 
         return $dbh;
